@@ -6,7 +6,7 @@
         <div class="col-md-14">
             <div class="card">
                 <div class="card-header">Data Mahasiswa
-                    <a href="tambah_data" class="btn btn-primary btn-md float-right">Tambah Data</a>
+                <a href="{{ route('tambah.mahasiswa')}}" class="btn btn-primary btn-md float-right">Tambah Data</a>
                     </div>
                 <div class="card-body">
                    <div class="table-responsive">
@@ -30,17 +30,13 @@
                             <td>{{ $mhs->alamat}}</td>
                             <td>{{ $mhs->telepon}}</td>
                             <td>{{ $mhs->gender}}</td>
+                            
                             <td>
-                                <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="#" class="btn btn-sm btn-danger">Hapus</a>
-                            </td>
+                                    <a href="{{ route('edit.mahasiswa', $mhs->id)}}" class="btn btn-sm btn-warning">EDIT</a>
+                                    <a href="{{ route('hapus.mahasiswa', $mhs->id)}}" class="btn btn-sm btn-danger">HAPUS</a>
+                             </td>
                         </tr>
-
-
                     @endforeach
-
-                        
-
                     </table>
                    </div>
                 </div>
