@@ -17,7 +17,7 @@ class MakulController extends Controller
 
     public function create()
     {
-        return view('makul.tambah');
+        return view('makul.create');
     }
 
     public function store(Request $request)
