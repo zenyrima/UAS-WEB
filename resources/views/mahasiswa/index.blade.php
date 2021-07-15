@@ -12,24 +12,29 @@
                    <div class="table-responsive">
                     <table class="table table-bordered">
                         <tr>
-                        <th>NO</th>
-                        <th>NAMA LENGKAP</th>
+                        <th>NO.</th>
                         <th>NPM</th>
+                        <th>NAMA LENGKAP</th>
                         <th>TEMPAT, TANGGAL LAHIR</th>
                         <th>ALAMAT</th>
                         <th>TELEPON</th>
                         <th>JENIS KELAMIN</th>
                         <th>AKSI</th>
                         </tr>
+                   
+                        @php
+                        $id = 1;
+                        @endphp
                     @foreach ($mahasiswa as $mhs)
                         <tr>
-                            <td>{{ $mhs->id}}</td>
-                            <td>{{ $mhs->user->name}}</td>
+
+                            <td>{{ $id++}}</td>
                             <td>{{ $mhs->npm}}</td>
+                            <td>{{ $mhs->user->name}}</td>
                             <td>{{ $mhs->tempat_lahir.','.$mhs->tanggal_lahir}}</td>
                             <td>{{ $mhs->alamat}}</td>
                             <td>{{ $mhs->telepon}}</td>
-                            <td>{{ $mhs->gender}}</td>
+                            <td>{{ $mhs->gender == 'L'? 'Laki-Laki' : 'Perempuan'}}</td>
                             
                             <td>
                                     <a href="{{ route('edit.mahasiswa', $mhs->id)}}" class="btn btn-sm btn-warning">EDIT</a>

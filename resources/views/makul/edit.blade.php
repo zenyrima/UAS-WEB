@@ -8,7 +8,7 @@
              <div class="card">
                  <div class="card-header">Edit Makul</div>
                  <div class="card-body">
-                 <form method="POST" action="{{ route('update.makul', $makul->id)}}">
+                 <form method="post" action="{{ route('update.makul', $makul->id)}}">
                  @csrf
                          <div class="form-group">
                             <div class="from row">
